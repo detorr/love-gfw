@@ -16,15 +16,12 @@ Users please 滚！嘻嘻嘻 😁
 ## Characteristics of Patriotic Program in this tutorial
 Give up the blacklist scheme. The number of websites on the wall is increasing dramatically every day. Limited life can not be spent in endless manual blacklisting and restarting devices.
 
-Avenue to Jane, once and for all!
 + Establish a list of important websites in China and conduct DNS inquiries in China
 + Other websites query DNS from `shadowsocks'client to `shadowsocks' server
 + Domestic or Asian IP traffic flows through domestic channels
 + Other traffic is forwarded through `shadowsocks'server
 
 ## Knowledge is meaningless if it is not shared.
-What is a saint? A saint is a person who gets and pays in a balanced way. Heaven and earth gave birth to me, and I respect heaven and earth; my parents raised me, and I also adopt parents; to acquire knowledge on the Internet, we should also share knowledge on the Internet. So it took many days to search for information, write tutorials, debug firmware, and before I knew it, a day passed.
-It feels good to be free: `youtube', `hulu', `twitter', `facebook', `google'...
 
 This document does not cover the principles and basic configurations of `shadowsocks'. If you don't even grasp these basic knowledge, please turn left and take a detour. Learn these basic knowledge and then come back to this tutorial.
 
@@ -41,7 +38,7 @@ There are many kinds of firewall tools. I have tried and successfully implemente
 The idea of this scheme is to use `ipset'to load the IP list of chnroute and `iptables' to realize the global proxy with automatic diversion of domestic and foreign traffic.
 
 + [Linux 系统](./docs/iptables-linux.md)
-+ MacOS 系统：暂无实现，与之类似的方案请参考 [一个基于 VirtualBox 和 openwrt 构建的项目, 旨在实现 macOS / Windows 平台的透明代理](https://github.com/icymind/VRouter)
++ MacOS System: Not yet implemented. For similar solutions, please refer to [A project based on VirtualBox and openwrt is designed to realize macOS/Windows Transparent Agent of Platform](https://github.com/icymind/VRouter)
 
 ### 2. Adopt nftables Realizing Intelligent Divergence
 
@@ -88,15 +85,14 @@ In order to better use Proxifier, we use the following schematic diagram to unde
 3. Direct (direct) direct access to the external network; Proxy (proxy) handed over the request to the proxy server for processing before connecting to the external network; Block (prohibition) intercepted outgoing requests.
 
 <div align=center><img src="https://ws3.sinaimg.cn/large/006tNc79gy1fz0edczefvj30dp06xdg8.jpg"/></div>
-It needs to be pointed out that Proxifier is charged, which is about tens of dollars. We'd better support the genuine version. I also provide a MacOS cracked version: [Proxifier_2.22.1_xclient.info.dmg] (https://www.lanzous.com/i2tv3je). The decompressed password is `xclient.info', and the key is in the decompressed text. The following usage tutorials are for MacOS users, similar to Windows platforms.
+It needs to be pointed out that Proxifier is charged, which is about tens of dollars. We'd better support the genuine version. I also provide a MacOS cracked version: [Proxifier_2.22.1_xclient.info.dmg] (https://www.lanzous.com/i2tv3je). The decompressed password is `xclient.info', and the key is in the unzipped text file. The following usage tutorials are for MacOS users, similar to Windows platforms.
 
-### 使用教程
+### Use tutorials
 
-接下来配置的三步顺序：
-
-+ 代理服务器配置
-+ 代理规则设置
-+ 域名解析设置
+The next three steps of configuration are:
++ Proxy Server Configuration
++ Agent Rule Settings
++ Domain Name Resolution Settings
 
 ① 打开软件点击 Proxies：
 
