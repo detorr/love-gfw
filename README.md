@@ -2,96 +2,87 @@
 
 ![](./img/socialist.jpg) ![](./img/gfw.jpg)
 
-通过路由器 360 度无痛爱国的方案已经层出不穷，然而我们不得不面对一个很现实的问题：**你不可能走到哪里都带着一个路由器！**
+The 360 degree painless patriotic routing scheme has emerged in endlessly, but we have to face a very real problem: ** You can't go anywhere with a router! **
 
-为了解决这个问题，本教程就诞生了，目标是手把手教你在不同操作系统上 360 度无死角自动翻越万里长城。:clap:
+To solve this problem, this tutorial was born. The goal is to teach you how to automatically cross the Great Wall 360 degrees without dead corners on different operating systems. Clap:
 
-PS: 目前只能在 Linux 和 MacOS 系统上实现， Windows
- 用户请绕行
+PS: At present, it can only be implemented on Linux and MacOS systems. Windows
+Users please bypass
 
-## 本教程爱国方案的特点
-放弃建立黑名单的方案吧，被墙的网站每天在大量增加，有限的人生不能在无穷的手工添加黑名单、重启设备中度过。
+## Characteristics of Patriotic Program in this tutorial
+Give up the blacklist scheme. The number of websites on the wall is increasing dramatically every day. Limited life can not be spent in endless manual blacklisting and restarting devices.
 
-大道至简，一劳永逸！
+Avenue to Jane, once and for all!
++ Establish a list of important websites in China and conduct DNS inquiries in China
++ Other websites query DNS from `shadowsocks'client to `shadowsocks' server
++ Domestic or Asian IP traffic flows through domestic channels
++ Other traffic is forwarded through `shadowsocks'server
 
-+ 建立国内重要网站名单，在国内进行dns查询
-+ 其他网站通过 `shadowsocks` 客户端向 `shadowsocks` 服务端进行 dns 查询
-+ 国内或亚洲的 IP 流量走国内通道
-+ 其他流量通过 `shadowsocks` 服务端转发
+## Knowledge is meaningless if it is not shared.
+What is a saint? A saint is a person who gets and pays in a balanced way. Heaven and earth gave birth to me, and I respect heaven and earth; my parents raised me, and I also adopt parents; to acquire knowledge on the Internet, we should also share knowledge on the Internet. So it took many days to search for information, write tutorials, debug firmware, and before I knew it, a day passed.
+It feels good to be free: `youtube', `hulu', `twitter', `facebook', `google'...
 
-## 知识若不分享，实在没有意义
+This document does not cover the principles and basic configurations of `shadowsocks'. If you don't even grasp these basic knowledge, please turn left and take a detour. Learn these basic knowledge and then come back to this tutorial.
 
-什么是圣人，圣人就是得到和付出比较均衡的人。天地生我，我敬天地；父母育我，我亦养父母；网上获得知识，也要在网上分享知识。于是，花了许多天，查资料，写教程，调试固件，不知不觉一天就过去了。
+Welcome to mention `Issues'to participate in maintenance projects.
+<br/>
+> There are two ways to achieve global intelligent shunting, one is through the firewall strategy, the other is through the policy routing table.
 
-自由的感觉真好:　`youtube`, `hulu`, `twitter`, `facebook`, `google`...
+## Realization through Firewall Policy
+There are many kinds of firewall tools. I have tried and successfully implemented two kinds of functions, one is `iptables', the other is `nftables'. ` iptables should be familiar to everyone. nftables may be unfamiliar to most people. If you want to know more, please refer to [the reason why Linux first introduced nftables, you might like nftables] (http://blog.jobbole.com/59624/).
 
-本文档不涉及 `shadowsocks` 的原理及基础配置，如果你连这些基本的知识也没掌握，请左转绕道而行，了解这些基本的知识之后再来看本教程。
+** Unfortunately, this solution is not applicable to the MacOS system. If you have any good suggestions, please give me some help. **
 
-欢迎提 `Issues` 参与维护项目。
-
-<br />
-
-> 这里有两种思路可以实现全局智能分流，一种思路是通过防火墙策略，另一种思路是通过策略路由表。
-
-## 通过防火墙策略实现
-
-防火墙工具有很多种，我尝试过并且成功实现功能的有两种，一个是 `iptables`，另一个是 `nftables`。`iptables` 大家应该都比较熟悉，`nftables` 对于大多数人来说也许比较陌生，如果你想进一步了解，请参考 [Linux 首次引入 nftables，你可能会喜欢 nftables 的理由](http://blog.jobbole.com/59624/)
-
-**遗憾的是，该方案并不适用于 MacOS 系统，如果你有什么好的建议，欢迎给我提供帮助。**
-
-### 1. 通过 iptables 实现智能分流
-
-这种方案的思路是使用 `ipset` 载入 chnroute 的 IP 列表并使用 `iptables` 实现带自动分流国内外流量的全局代理
+### 1. Intelligent shunting through iptables
+The idea of this scheme is to use `ipset'to load the IP list of chnroute and `iptables' to realize the global proxy with automatic diversion of domestic and foreign traffic.
 
 + [Linux 系统](./docs/iptables-linux.md)
 + MacOS 系统：暂无实现，与之类似的方案请参考 [一个基于 VirtualBox 和 openwrt 构建的项目, 旨在实现 macOS / Windows 平台的透明代理](https://github.com/icymind/VRouter)
 
-### 2. 通过 nftables 实现智能分流
+### 2. Adopt nftables Realizing Intelligent Divergence
 
-+ [Linux 系统](./docs/nftables-linux.md)
-+ MacOS 系统：暂无实现
++ [Linux System](./docs/nftables-linux.md)
++ MacOS System: Not yet implemented
 
-## 通过策略路由表实现
+## Implementation by Policy Routing Table
 
-这种方案的大致思路是先启动一个本地 `socks` 代理，然后通过工具将 `socks` 代理伪装成 `vpn`，最后再通过策略路由进行分流。
+The general idea of this scheme is to start a local `socks'proxy, then disguise `socks' proxy as `vpn'through tools, and then distribute it through policy routing.
 
-有两种工具可以将 `socks` 代理伪装成 `vpn`。
+There are two tools to disguise `socks'agents as `vpn'.
+### 1. Intelligent shunting through badvpn
+This paper mainly introduces `tun2socks', which is actually a part of `badvpn'.
 
-### 1. 通过 badvpn 实现智能分流
+` Tun2socks `implements a mechanism that allows you to encapsulate data in a completely transparent `socks'protocol without changing any application, forward it to a `socks' agent, which is then responsible for forwarding application data between the agent and the real server.
 
-主要介绍一下 `tun2socks`，它其实是 `badvpn` 的一个组成部分。
+There are two ways to use proxy. One is to configure proxy explicitly by yourself. In this way, when data leaves your host, its target address is the proxy server.
 
-`tun2socks` 实现一种机制，它可以让你无需改动任何应用程序而完全透明地将数据用 `socks` 协议封装，转发给一个 `socks` 代理，然后由该代理程序负责与真实服务器之间转发应用数据。
+The other is to act as a transparent proxy, that is, to redirect the original data to an application in the middle and forward it by the proxy agent.
 
-使用代理有两种方式，一种是你自己显式配置代理，这样一来，数据离开你的主机时它的目标地址就是代理服务器，另一种是做透明代理，即在中途把原始数据重定向到一个应用程序，由该代理程序代理转发。
-
-`tun2socks` 在第二种的基础上，完成了`socks` 协议的封装，并且实现该机制时使用了强大的 `tun` 网卡而不必再去配置复杂的 `iptables` 规则。
+` Tun2socks `completes the encapsulation of the `socks'protocol on the basis of the second one, and uses a powerful `tun' network card to implement the mechanism without having to configure complex `iptables'rules.
 
 + [Linux 系统](./docs/badvpn-linux.md)
 + MacOS 系统：暂时无法编译成功，如有人编译成功，望告知
 
 ### 2. 通过 gotun2socks 实现智能分流
 
-`gotun2socks` 实际上是 `badvpn` 的 `go` 语言实现方式，而且更加智能化，它会在启动时自动帮你添加 tuntap 网卡，停止时自动删除该网卡，不需要我们手动添加删除。怎么样，是不是有点小激动呢？是不是从此爱上 go 语言了呢？:relieved:
+` gotun2socks is actually the `go'language implementation of `badvpn', and is more intelligent. It will automatically add tuntap network card to you at startup and automatically delete the network card at stop, without us adding and deleting it manually. How about a little excitement? Have you fallen in love with go language ever since? Relieved:
 
 + [Linux 系统](./docs/gotun2socks-linux.md)
 + [MacOS 系统](./docs/gotun2socks-macos.md)
 
-## 番外篇
+## Outside Chapter
+Although all these fancy patriotic schemes can achieve global intelligence diversion, they are still too complex and daunting for most people. Most people don't have a strong need for global intelligent shunting, just let some special applications use proxies. Some applications allow you to choose to use proxies, but many applications do not provide this part of the configuration at all. Now, in order to let some software traffic that the original logic does not consider/do not use/cannot configure the agent go through the agent, the system calls can only be hijacked by hook.
 
-虽然以上各种花式爱国方案都能实现全局智能分流，但对大多数人来说还是太复杂了，令人望而生畏。绝大多数人对于全局智能分流的需求不是很强烈，只需要让某些特殊的应用程序使用代理就行了。有的应用程序可以让你选择使用代理，但很多应用根本不提供这部分的配置。现在为了让一些原本逻辑没考虑/不使用/无法配置代理的软件流量经过代理走，只能通过 hook 的方式劫持系统调用。
 
-利用 [Proxifier](https://www.proxifier.com/) 就可以实现此功能，在 Proxifier 的帮助下，即使你不懂任何网络原理，通过简单配置也可以轻松地玩转流量转发。并且相比于 VPN（虚拟专用网）全局代理，Proxifier 这种灵活配置还可以实现一些意想不到的功能，例如：监测某个应用的流量或是屏蔽广告等。当然至于最终如何使用，完全取决于您的想像力。
+Using [Proxifier] (https://www.proxifier.com/) to achieve this function, with the help of Proxifier, you can easily play traffic forwarding through simple configuration even if you don't understand any network principles. Compared with VPN (Virtual Private Network) global proxy, Proxifier's flexible configuration can also achieve some unexpected functions, such as monitoring the traffic of an application or shielding advertisements. Of course, how you use it ultimately depends entirely on your imagination.
 
-为了更好的使用 Proxifier，我们通过以下示意图来了解一下 Proxifier 工作的原理：
-
-1. Proxifier 启动后接管系统内所有的网络请求连接；
-2. 接管后的网络请求连接以 Proxifier 配置的规则处理；
-3. Direct (直连) 直接访问外部网络；Proxy (代理) 将请求交给代理服务器处理后再连接到外网；Block (禁止) 则会拦截掉向外发送的请求。
+In order to better use Proxifier, we use the following schematic diagram to understand the working principle of Proxifier:
+1. Proxifier takes over all network request connections in the system after starting.
+2. After taking over, network requests are processed by Proxifier configuration rules.
+3. Direct (direct) direct access to the external network; Proxy (proxy) handed over the request to the proxy server for processing before connecting to the external network; Block (prohibition) intercepted outgoing requests.
 
 <div align=center><img src="https://ws3.sinaimg.cn/large/006tNc79gy1fz0edczefvj30dp06xdg8.jpg"/></div>
-
-需要说明的是，Proxifier 是收费的，也就几十块钱左右，大家最好还是支持正版。我这里也提供了一个 MacOS 破解版本：[Proxifier_2.22.1_xclient.info.dmg](https://www.lanzous.com/i2tv3je)。解压密码为：`xclient.info`，密钥在解压后的文本里。下面的使用教程针对的是 MacOS 用户，Windows 平台类似。
+It needs to be pointed out that Proxifier is charged, which is about tens of dollars. We'd better support the genuine version. I also provide a MacOS cracked version: [Proxifier_2.22.1_xclient.info.dmg] (https://www.lanzous.com/i2tv3je). The decompressed password is `xclient.info', and the key is in the decompressed text. The following usage tutorials are for MacOS users, similar to Windows platforms.
 
 ### 使用教程
 
@@ -187,6 +178,75 @@ $ sudo ps -ef|grep git
 
 ## 版权
 
+Copyright 2018 Ryan (yangchuansheng33### Use tutorials
+The next three steps of configuration are:
++ Proxy Server Configuration
++ Agent Rule Settings
++ Domain Name Resolution Settings
+Open the software and click Proxies:
+< div align = center > < img width = "700" SRC = "https://ws1.sinaimg.cn/large/006tNc79gy1fz0f3d99hwj316a0u04d2.jpg"/> </div>
++ Click "Add"
++ Enter the IP (default 127.0.0.1) and port (default 1080) of the local shadowshocks.
++ Select `SOCKS Versin 5'`
++ OK
+< div align = center > < img width = "700" SRC = "https://ws1.sinaimg.cn/large/006tNc79gy1 fz0 faoblsej30u00vdjvs.jpg"/> </div>
+** The next two steps of configuration are critical. Configuration errors can lead to proxy failure or circular proxy! **
+(2) Configuration step 2
++ Click Rules
++ Select localhost and click Edit
++ Add the IP address of the shadowshocks proxy server at Target hosts (for example, 123.123.123)
++ Action Selects Direct (Direct Connection)
++ OK
+< div align = center > < img width = "700" SRC = "https://ws1.sinaimg.cn/large/006tNc79gy1 fz0 feaqxvcj30t60tuadn.jpg"/> </div>
+
+** Note: This configuration step allows packets sent to the proxy server to pass through to prevent looping proxy errors. **
+The configuration is as follows:
+< div align = center > < img width = "700" SRC = "https://ws4.sinaimg.cn/large/006tNc79gy1fz0fhuwiqoj316u03a3zs.jpg"/> </div>
+
+(3) Configuration step 3
++ Click DNS
++ Select the second Resolve hostnames through proxy (domain name resolution via proxy server)
++ OK
+< div align = center > < img width = "700" SRC = "https://ws2.sinaimg.cn/large/006tNc79gy1 fz0fnrzenij30vq0qggoz.jpg"/> </div>
+
+** If you have configured a non-polluting DNS, you can choose Detect DNS settings automatically and use the default DNS. **
+So far, the agent has been configured. Next, I will give some examples of specific usage scenarios. The most commonly used proxy tool in daily work is `git'. In order to make git use proxy compulsively, only one proxy rule needs to be created in Proxifier:
++ Click Rules
++ Click Add
++ Name field fills in Git
++ Fill in `git-remote-https'in the Applications field`
++ Action Selects Proxy SOCKS 5 127.0.0.1:1080
+< div align = center > < img width = "700" SRC = "https://ws4.sinaimg.cn/large/006tNc79gy1fz0g2zxu4oj30t60tu41s.jpg"/> </div>
+
+If you don't know what to write in the Applications field, I can teach you a way to find the process of using the agent in Git clone by following commands:
+``` Bash
+Sudo ps-ef | grep Git
+501 5623 1012 Dec18?? 0:00.89/Applications/Atom.app/Contents/Frameworks/Squirrel.framework/Resources/ShipIt com.github.atom.ShipIt/Users/yangcs/Library/Caches/com.github.atom.ShipIt/ShipItState.plist
+501 77481 92668 05:14PM ttys002 0:00.00 grep -- color = auto -- exclude-dir=.bzr -- exclude-dir= CVS -- exclude-dir=.git -- exclude-dir=.hg -- exclude-dir=.svn git=.
+501 77184 62902 05:14PM ttys003 0:00.07 git clone https://github.com/kubernetes/kubernetes
+501 77185 77184 0 5:14PM ttys003 0:01.58/usr/local/Cellar/git/2.18.0/libexec/git-core/git-remote-https origin https://github.com/kubernetes/kubernetes
+501 77189 77185 05:14PM ttys003 0:00.39/usr/local/Cellar/git/2.18.0/libexec/git-core/git fetch-pack--stateless-rpc--stdin--lock-pack--thin--check-self-contained-and-connected--cloning https://github.com/kubernetes/netkuberes/
+501 77190 77189 05:14PM ttys003 0:01.52/usr/local/Cellar/git/2.18.0/libexec/git-core/git index-pack--stdin-v--fix-thin--keep=fetch-pack 77189 on MacBookPro--check-self-contained-and-connected--packer=2,877904
+```
+
+Obviously, `git-remote-https'is the process we're looking for, and if you're not sure, you can add `git' to the Applications field as well.
+< div align = center > < img width = "700" SRC = "https://ws1.sinaimg.cn/large/006tNc79gy1fz0gesufy3j30t60tugox.jpg"/> </div>
+
+Now if you pull the warehouse through `git clone', you can see the detailed connection statistics:
+< div align = center > < img width = "700" SRC = "https://ws2.sinaimg.cn/large/006tNc79gy1fz0gjpd5pqj318b0u0ai6.jpg"/> </div>
+
+Another typical usage scenario is Docker. The configuration method is similar to git, so I won't demonstrate it. I'll focus on reminding you that the application field value is `com. docker. vpnkit'. If you are not confident, you can use the wildcard character `docker'. The Target Hosts field is filled in `gcr.io;*.docker.io'.
+< div align = center > < img width = "700" SRC = "https://ws1.sinaimg.cn/large/006tNc79gy1fz0gscf7gxj30t60tugoz.jpg"/> </div>
+
+Come on, let's pull a legendary gcr. IO image that can't be pulled by proxy. I don't believe this evil.
+< div align = center > < img width = "700" SRC = "https://ws4.sinaimg.cn/large/006tNc79gy1 fz0gkw6bj31s807odkr.jpg"/> </div>
+< div align = center > < img width = "700" SRC = "https://ws2.sinaimg.cn/large/006tNc79gy1fz0gvtuns0j318b0u01a1.jpg"/> </div>
+
+Well, who else?!
+Other mysterious applications, such as `brew'and `Slack', can use this method to force the use of agents, you can explore for yourself, goodbye!
+
+## Copyright
 Copyright 2018 Ryan (yangchuansheng33@gmail.com)
+MIT License, see LICENSE file for details.@gmail.com)
 
 MIT License，详情见 LICENSE 文件。
