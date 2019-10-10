@@ -1,4 +1,4 @@
-# `Linux` 和 `MacOS` 设备智能分流方案
+# `Linux` or `MacOS` in one hit
 
 <div align=center><img width="700" src="img/punch.gif"/></div>
 
