@@ -2,8 +2,6 @@
 
 <div align=center><img width="700" src="img/punch.gif"/></div>
 
-
-
 The 360 degree painless patriotic routing scheme has emerged in endlessly, but we have to face a very real problem: 
 
 ** You can't go anywhere with a router! **
@@ -197,10 +195,12 @@ Open the software and click Proxies:
 + Add the IP address of the shadowshocks proxy server at Target hosts (for example, 123.123.123)
 + Action Selects Direct (Direct Connection)
 + OK
+
 <div align = center> <img width = "700" src="https://ws1.sinaimg.cn/large/006tNc79gy1 fz0 feaqxvcj30t60tuadn.jpg"/> </div>
 
 ** Note: This configuration step allows packets sent to the proxy server to pass through to prevent looping proxy errors. **
 The configuration is as follows:
+
 <div align = center > <img width = "700" src="https://ws4.sinaimg.cn/large/006tNc79gy1fz0fhuwiqoj316u03a3zs.jpg"/> </div>
 
 (3) Configuration step 3
@@ -211,14 +211,17 @@ The configuration is as follows:
 
 ** If you have configured a non-polluting DNS, you can choose Detect DNS settings automatically and use the default DNS. **
 So far, the agent has been configured. Next, I will give some examples of specific usage scenarios. The most commonly used proxy tool in daily work is `git'. In order to make git use proxy compulsively, only one proxy rule needs to be created in Proxifier:
+
 + Click Rules
 + Click Add
 + Name field fills in Git
 + Fill in `git-remote-https'in the Applications field`
 + Action Selects Proxy SOCKS 5 127.0.0.1:1080
-<div align = center > < img width = "700" src="https://ws4.sinaimg.cn/large/006tNc79gy1fz0g2zxu4oj30t60tu41s.jpg"/> </div>
+
+<div align = center > <img width = "700" src="https://ws4.sinaimg.cn/large/006tNc79gy1fz0g2zxu4oj30t60tu41s.jpg"/> </div>
 
 If you don't know what to write in the Applications field, I can teach you a way to find the process of using the agent in Git clone by following commands:
+
 ``` Bash
 Sudo ps-ef | grep Git
 501 5623 1012 Dec18?? 0:00.89/Applications/Atom.app/Contents/Frameworks/Squirrel.framework/Resources/ShipIt com.github.atom.ShipIt/Users/yangcs/Library/Caches/com.github.atom.ShipIt/ShipItState.plist
@@ -231,7 +234,7 @@ Sudo ps-ef | grep Git
 
 Obviously, `git-remote-https'is the process we're looking for, and if you're not sure, you can add `git' to the Applications field as well.
 
-<div align = center > <img width = "700" src="https://ws1.sinaimg.cn/large/006tNc79gy1fz0gesufy3j30t60tugox.jpg"/> </div>
+<div align = center> <img width ="700" src="https://ws1.sinaimg.cn/large/006tNc79gy1fz0gesufy3j30t60tugox.jpg"/> </div>
 
 Now if you pull the warehouse through `git clone', you can see the detailed connection statistics:
 
@@ -245,13 +248,13 @@ Come on, let's pull a legendary gcr. IO image that can't be pulled by proxy. I d
 
 <div align = center> <img width = "700" src="https://ws4.sinaimg.cn/large/006tNc79gy1 fz0gkw6bj31s807odkr.jpg"/> </div>
 
-<div align = center> < img width = "700" src="https://ws2.sinaimg.cn/large/006tNc79gy1fz0gvtuns0j318b0u01a1.jpg"/> </div>
+<div align = center> <img width = "700" src="https://ws2.sinaimg.cn/large/006tNc79gy1fz0gvtuns0j318b0u01a1.jpg"/> </div>
 
 Well, who else?!
 Other mysterious applications, such as `brew'and `Slack', can use this method to force the use of agents, you can explore for yourself, goodbye!
 
 ## Copyright
-Copyright 2018 Ryan (yangchuansheng33@gmail.com)
-MIT License, see LICENSE file for details.@gmail.com)
 
-MIT License，详情见 LICENSE 文件。
+Copyright 2018 Ryan (yangchuansheng33@gmail.com)
+
+MIT License, see LICENSE file for details
