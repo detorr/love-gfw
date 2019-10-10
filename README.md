@@ -245,7 +245,7 @@ Come on, let's pull a legendary gcr. IO image that can't be pulled by proxy. I d
 
 <div align = center> <img width = "700" src="https://ws4.sinaimg.cn/large/006tNc79gy1 fz0gkw6bj31s807odkr.jpg"/> </div>
 
-< div align = center > < img width = "700" src="https://ws2.sinaimg.cn/large/006tNc79gy1fz0gvtuns0j318b0u01a1.jpg"/> </div>
+<div align = center> < img width = "700" src="https://ws2.sinaimg.cn/large/006tNc79gy1fz0gvtuns0j318b0u01a1.jpg"/> </div>
 
 Well, who else?!
 Other mysterious applications, such as `brew'and `Slack', can use this method to force the use of agents, you can explore for yourself, goodbye!
