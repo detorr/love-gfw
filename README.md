@@ -142,7 +142,7 @@ The most commonly used proxy tool in daily work is `git'. In order to make git u
 + Fill in `git-remote-https'in the Applications field`
 + Action Selects Proxy SOCKS 5 127.0.0.1:1080
 
-< div align = center > < img width = "700" SRC = "https://ws4.sinaimg.cn/large/006tNc79gy1fz0g2zxu4oj30t60tu41s.jpg"/> </div>
+<div align = center > <img width = "700" src="https://ws4.sinaimg.cn/large/006tNc79gy1fz0g2zxu4oj30t60tu41s.jpg"/> </div>
 
 If you don't know what to write in the Applications field, I can teach you a way to find the process of using the agent in Git clone by following commands:
 
