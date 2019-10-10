@@ -165,23 +165,22 @@ $ sudo ps -ef|grep git
 
 <div align=center><img width="700" src="https://ws2.sinaimg.cn/large/006tNc79gy1fz0gjpd5pqj318b0u0ai6.jpg"/></div>
 
-另外一个典型的使用场景就是 Docker。配置方法和 git 类似，我就不演示了，重点提醒一下 Applications 字段值是 `com.docker.vpnkit`。如果你不放心，可以使用通配符 `*docker*`。Target Hosts 字段填入 `gcr.io; *.docker.io`。
+Another typical usage scenario is Docker. The configuration method is similar to git, so I won't demonstrate it. I'll focus on reminding you that the application field value is com. docker. vpnkit. If you're not sure, you can use the wildcard * docker *. The Target Hosts field is filled in gcr.io;*.docker.io.
 
 <div align=center><img width="700" src="https://ws1.sinaimg.cn/large/006tNc79gy1fz0gscf7gxj30t60tugoz.jpg"/></div>
 
-来，我们来 pull 一个传说中的无法使用代理拉取的 gcr.io 镜像，我就不信这个邪了：
+Come on, let's pull a legendary gcr. IO image that can't be pulled by proxy. 
 
 <div align=center><img width="700" src="https://ws4.sinaimg.cn/large/006tNc79gy1fz0gwgkw6bj31s807odkr.jpg"/></div>
 
 <div align=center><img width="700" src="https://ws2.sinaimg.cn/large/006tNc79gy1fz0gvtuns0j318b0u01a1.jpg"/></div>
 
-怎么样，还有谁？！
+Well, who else?!
+Other mysterious applications, such as `brew'and `Slack', can use this method to force the use of agents, you can explore for yourself, goodbye!
 
-其他还有一些迷之应用，比如 `brew`、`Slack` 都可以使用这个方法来强制使用代理，大家可以自己探索，再见！
+## Copyright
 
-## 版权
 
-Copyright 2018 Ryan (yangchuansheng33### Use tutorials
 The next three steps of configuration are:
 + Proxy Server Configuration
 + Agent Rule Settings
