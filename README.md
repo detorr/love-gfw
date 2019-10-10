@@ -134,6 +134,7 @@ The configuration is as follows:
 So far, the agent has been configured. Next, I will give some examples of specific usage scenarios. 
 
 The most commonly used proxy tool in daily work is `git'. In order to make git use proxy compulsively, only one proxy rule needs to be created in Proxifier:
+
 + Click Rules
 + Click Add
 + Name field fills in Git
@@ -182,14 +183,20 @@ The next three steps of configuration are:
 + Agent Rule Settings
 + Domain Name Resolution Settings
 Open the software and click Proxies:
+
 <div align = "center" > <img width = "700" src="https://ws1.sinaimg.cn/large/006tNc79gy1fz0f3d99hwj316a0u04d2.jpg"/> </div>
+
 + Click "Add"
 + Enter the IP (default 127.0.0.1) and port (default 1080) of the local shadowshocks.
 + Select `SOCKS Versin 5'`
 + OK
+
 <div align ="center"> <img width="700" src="https://ws1.sinaimg.cn/large/006tNc79gy1 fz0 faoblsej30u00vdjvs.jpg"/> </div>
+
 ** The next two steps of configuration are critical. Configuration errors can lead to proxy failure or circular proxy! **
+
 (2) Configuration step 2
+
 + Click Rules
 + Select localhost and click Edit
 + Add the IP address of the shadowshocks proxy server at Target hosts (for example, 123.123.123)
@@ -204,9 +211,11 @@ The configuration is as follows:
 <div align = "center" > <img width = "700" src="https://ws4.sinaimg.cn/large/006tNc79gy1fz0fhuwiqoj316u03a3zs.jpg"/> </div>
 
 (3) Configuration step 3
+
 + Click DNS
 + Select the second Resolve hostnames through proxy (domain name resolution via proxy server)
 + OK
+
 <div align = "center"> < img width = "700" src="https://ws2.sinaimg.cn/large/006tNc79gy1 fz0fnrzenij30vq0qggoz.jpg"/> </div>
 
 ** If you have configured a non-polluting DNS, you can choose Detect DNS settings automatically and use the default DNS. **
