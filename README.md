@@ -2,7 +2,9 @@
 
 ![](./img/socialist.jpg) ![](./img/gfw.jpg)
 
-The 360 degree painless patriotic routing scheme has emerged in endlessly, but we have to face a very real problem: ** You can't go anywhere with a router! **
+The 360 degree painless patriotic routing scheme has emerged in endlessly, but we have to face a very real problem: 
+
+** You can't go anywhere with a router! **
 
 To solve this problem, this tutorial was born. The goal is to teach you how to automatically cross the Great Wall 360 degrees without dead corners on different operating systems. Clap:
 
@@ -65,7 +67,9 @@ The other is to act as a transparent proxy, that is, to redirect the original da
 
 ### 2. 通过 gotun2socks 实现智能分流
 
-` gotun2socks is actually the `go'language implementation of `badvpn', and is more intelligent. It will automatically add tuntap network card to you at startup and automatically delete the network card at stop, without us adding and deleting it manually. How about a little excitement? Have you fallen in love with go language ever since? Relieved:
+` gotun2socks is actually the `go'language implementation of `badvpn', and is more intelligent. It will automatically add tuntap network card to you at startup and automatically delete the network card at stop, without us adding and deleting it manually. How about a little excitement? 
+
+Have you fallen in love with go language ever since? 
 
 + [Linux 系统](./docs/gotun2socks-linux.md)
 + [MacOS 系统](./docs/gotun2socks-macos.md)
@@ -115,33 +119,34 @@ It needs to be pointed out that Proxifier is charged, which is about tens of dol
 
 <div align=center><img width="700" src="https://ws1.sinaimg.cn/large/006tNc79gy1fz0feaqxvcj30t60tuadn.jpg"/></div>
 
-**注：此配置步骤允许发送到代理服务器的数据包通过，防止循环代理错误。**
+** Note: This configuration step allows packets sent to the proxy server to pass through to prevent looping proxy errors. **
 
-配置后如图：
+The configuration is as follows:
 
 <div align=center><img width="700" src="https://ws4.sinaimg.cn/large/006tNc79gy1fz0fhuwiqoj316u03a3zs.jpg"/></div>
 
-③ 配置第三步
-
-+ 点击 DNS
-+ 选择第二个 Resolve hostnames through proxy（通过代理服务器解析域名）
+(3) Configuration step 3
++ Click DNS
++ Select the second Resolve hostnames through proxy (domain name resolution via proxy server)
 + OK
 
 <div align=center><img width="700" src="https://ws2.sinaimg.cn/large/006tNc79gy1fz0fnrzenij30vq0qggoz.jpg"/></div>
 
-**如果你已经配置了无污染 DNS，这里可以直接选择 Detect DNS settings automatically，使用系统默认的 DNS。**
+** If you have configured a non-polluting DNS, you can choose Detect DNS settings automatically and use the default DNS. **
++ OK
 
-至此，代理已经配置完毕，接下来我给出一些具体使用场景的示例。平时工作中最常用的需要使用代理的工具就是 `git`，为了让 git 强制性使用代理，只需在 Proxifier 中创建一个代理规则：
+So far, the agent has been configured. Next, I will give some examples of specific usage scenarios. 
 
-+ 点击 Rules
-+ 点击 Add
-+ Name 字段填入 git
-+ Applications 字段填入 `git-remote-https`
-+ Action 选择 Proxy SOCKS5 127.0.0.1:1080
+The most commonly used proxy tool in daily work is `git'. In order to make git use proxy compulsively, only one proxy rule needs to be created in Proxifier:
++ Click Rules
++ Click Add
++ Name field fills in Git
++ Fill in `git-remote-https'in the Applications field`
++ Action Selects Proxy SOCKS 5 127.0.0.1:1080
 
-<div align=center><img width="700" src="https://ws4.sinaimg.cn/large/006tNc79gy1fz0g2zxu4oj30t60tu41s.jpg"/></div>
+< div align = center > < img width = "700" SRC = "https://ws4.sinaimg.cn/large/006tNc79gy1fz0g2zxu4oj30t60tu41s.jpg"/> </div>
 
-如果你不知道 Applications 字段该写什么，我可以教你一个方法，在 git clone 的过程中通过下面的命令来寻找使用代理的进程：
+If you don't know what to write in the Applications field, I can teach you a way to find the process of using the agent in Git clone by following commands:
 
 ```bash
 $ sudo ps -ef|grep git
