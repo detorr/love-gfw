@@ -105,14 +105,14 @@ The next three steps of configuration are:
 
 <div align=center><img width="700" src="https://ws1.sinaimg.cn/large/006tNc79gy1fz0faoblsej30u00vdjvs.jpg"/></div>
 
-**接下来的两步配置至关重要，配置错误可能导致代理失败或者循环代理！**
+The next two steps of configuration are critical. Configuration errors can lead to proxy failure or circular proxy!
 
-② 配置第二步
+(2) Configuration step 2
 
-+ 点击 Rules
-+ 选中 localhost,点击 Edit
-+ Target hosts 处添加 shadowshocks 代理服务器的 IP 地址（以 123.123.123.123 示例）
-+ Action选择Direct(直连)
++ Click Rules
++ Select localhost and click Edit
++ Add the IP address of the shadowshocks proxy server at Target hosts (for example, 123.123.123)
++ Action Selects Direct (Direct Connection)
 + OK
 
 <div align=center><img width="700" src="https://ws1.sinaimg.cn/large/006tNc79gy1fz0feaqxvcj30t60tuadn.jpg"/></div>
@@ -157,15 +157,13 @@ $ sudo ps -ef|grep git
   501 77190 77189   0  5:14PM ttys003    0:01.52 /usr/local/Cellar/git/2.18.0/libexec/git-core/git index-pack --stdin -v --fix-thin --keep=fetch-pack 77189 on MacBookPro --check-self-contained-and-connected --pack_header=2,877904
 ```
 
-很明显，`git-remote-https` 就是我们想找的进程，如果你还不放心，可以将 `git` 也加入 Applications 字段。
+Obviously, `git-remote-https'is the process we're looking for, and if you're not sure, you can add `git' to the Applications field as well.
 
-<div align=center><img width="700" src="https://ws1.sinaimg.cn/large/006tNc79gy1fz0gesufy3j30t60tugox.jpg"/></div>
+<div align = center > <img width = "700" src="https://ws1.sinaimg.cn/large/006tNc79gy1fz0gesufy3j30t60tugox.jpg"/> </div>
 
-现在如果你通过 `git clone` 来拉取仓库，就可以看到详细的连接统计信息：
-
-<div align=center><img width="700" src="https://ws2.sinaimg.cn/large/006tNc79gy1fz0gjpd5pqj318b0u0ai6.jpg"/></div>
-
+Now if you pull the warehouse through `git clone', you can see the detailed connection statistics:
 Another typical usage scenario is Docker. The configuration method is similar to git, so I won't demonstrate it. I'll focus on reminding you that the application field value is com. docker. vpnkit. If you're not sure, you can use the wildcard * docker *. The Target Hosts field is filled in gcr.io;*.docker.io.
+
 
 <div align=center><img width="700" src="https://ws1.sinaimg.cn/large/006tNc79gy1fz0gscf7gxj30t60tugoz.jpg"/></div>
 
