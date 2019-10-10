@@ -233,21 +233,21 @@ Sudo ps-ef | grep Git
 
 Obviously, `git-remote-https'is the process we're looking for, and if you're not sure, you can add `git' to the Applications field as well.
 
-< div align = center > < img width = "700" SRC = "https://ws1.sinaimg.cn/large/006tNc79gy1fz0gesufy3j30t60tugox.jpg"/> </div>
+<div align = center > <img width = "700" src="https://ws1.sinaimg.cn/large/006tNc79gy1fz0gesufy3j30t60tugox.jpg"/> </div>
 
 Now if you pull the warehouse through `git clone', you can see the detailed connection statistics:
 
-< div align = center > < img width = "700" SRC = "https://ws2.sinaimg.cn/large/006tNc79gy1fz0gjpd5pqj318b0u0ai6.jpg"/> </div>
+<div align = center > <img width = "700" src= "https://ws2.sinaimg.cn/large/006tNc79gy1fz0gjpd5pqj318b0u0ai6.jpg"/> </div>
 
 Another typical usage scenario is Docker. The configuration method is similar to git, so I won't demonstrate it. I'll focus on reminding you that the application field value is `com. docker. vpnkit'. If you are not confident, you can use the wildcard character `docker'. The Target Hosts field is filled in `gcr.io;*.docker.io'.
 
-< div align = center > < img width = "700" SRC = "https://ws1.sinaimg.cn/large/006tNc79gy1fz0gscf7gxj30t60tugoz.jpg"/> </div>
+<div align = center> <img width = "700" src= "https://ws1.sinaimg.cn/large/006tNc79gy1fz0gscf7gxj30t60tugoz.jpg"/> </div>
 
 Come on, let's pull a legendary gcr. IO image that can't be pulled by proxy. I don't believe this evil.
 
-< div align = center > < img width = "700" SRC = "https://ws4.sinaimg.cn/large/006tNc79gy1 fz0gkw6bj31s807odkr.jpg"/> </div>
+<div align = center> <img width = "700" src="https://ws4.sinaimg.cn/large/006tNc79gy1 fz0gkw6bj31s807odkr.jpg"/> </div>
 
-< div align = center > < img width = "700" SRC = "https://ws2.sinaimg.cn/large/006tNc79gy1fz0gvtuns0j318b0u01a1.jpg"/> </div>
+< div align = center > < img width = "700" src="https://ws2.sinaimg.cn/large/006tNc79gy1fz0gvtuns0j318b0u01a1.jpg"/> </div>
 
 Well, who else?!
 Other mysterious applications, such as `brew'and `Slack', can use this method to force the use of agents, you can explore for yourself, goodbye!
