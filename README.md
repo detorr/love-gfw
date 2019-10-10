@@ -1,5 +1,7 @@
 # `Linux` 和 `MacOS` 设备智能分流方案
 
+<div align=center><img width="700" src="img/punch.gif"/></div>
+
 
 
 The 360 degree painless patriotic routing scheme has emerged in endlessly, but we have to face a very real problem: 
