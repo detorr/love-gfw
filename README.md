@@ -9,7 +9,7 @@ The 360 degree painless patriotic routing scheme has emerged in endlessly, but w
 To solve this problem, this tutorial was born. The goal is to teach you how to automatically cross the Great Wall 360 degrees without dead corners on different operating systems. Clap:
 
 PS: At present, it can only be implemented on Linux and MacOS systems. Windows
-Users please bypass
+Users please 滚！嘻嘻嘻 😁
 
 ## Characteristics of Patriotic Program in this tutorial
 Give up the blacklist scheme. The number of websites on the wall is increasing dramatically every day. Limited life can not be spent in endless manual blacklisting and restarting devices.
