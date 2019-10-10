@@ -216,9 +216,10 @@ The configuration is as follows:
 + Select the second Resolve hostnames through proxy (domain name resolution via proxy server)
 + OK
 
-<div align = "center"> < img width = "700" src="https://ws2.sinaimg.cn/large/006tNc79gy1 fz0fnrzenij30vq0qggoz.jpg"/> </div>
+<div align = "center"> <img width ="700" src="https://ws2.sinaimg.cn/large/006tNc79gy1fz0fnrzenij30vq0qggoz.jpg"/> </div>
 
 ** If you have configured a non-polluting DNS, you can choose Detect DNS settings automatically and use the default DNS. **
+
 So far, the agent has been configured. Next, I will give some examples of specific usage scenarios. The most commonly used proxy tool in daily work is `git'. In order to make git use proxy compulsively, only one proxy rule needs to be created in Proxifier:
 
 + Click Rules
@@ -247,13 +248,13 @@ Obviously, `git-remote-https'is the process we're looking for, and if you're not
 
 Now if you pull the warehouse through `git clone', you can see the detailed connection statistics:
 
-<div align = "center" > <img width = "700" src= "https://ws2.sinaimg.cn/large/006tNc79gy1fz0gjpd5pqj318b0u0ai6.jpg"/> </div>
+<div align = "center"> <img width="700" src="https://ws2.sinaimg.cn/large/006tNc79gy1fz0gjpd5pqj318b0u0ai6.jpg"/> </div>
 
 Another typical usage scenario is Docker. The configuration method is similar to git, so I won't demonstrate it. I'll focus on reminding you that the application field value is `com. docker. vpnkit'. If you are not confident, you can use the wildcard character `docker'. The Target Hosts field is filled in `gcr.io;*.docker.io'.
 
-<div align = "center"> <img width = "700" src= "https://ws1.sinaimg.cn/large/006tNc79gy1fz0gscf7gxj30t60tugoz.jpg"/> </div>
+<div align = "center"> <img width = "700" src="https://ws1.sinaimg.cn/large/006tNc79gy1fz0gscf7gxj30t60tugoz.jpg"/> </div>
 
-Come on, let's pull a legendary gcr. IO image that can't be pulled by proxy. I don't believe this evil.
+Come on, let's pull a legendary gcr. IO image that can't be pulled by proxy.
 
 <div align = "center"> <img width = "700" src="https://ws4.sinaimg.cn/large/006tNc79gy1 fz0gkw6bj31s807odkr.jpg"/> </div>
 
